@@ -19,7 +19,7 @@ include_once '../Layouts/header.php';
                 // Verificamos si los datos llegaron por el método POST
                 if ($_POST) {
                     
-                    // ¡NUEVO!: Validación del lado del servidor. 
+                    // Validación del lado del servidor. 
                     // Chequeamos que exista y que no sea una cadena vacía.
                     if (isset($_POST['numero']) && $_POST['numero'] !== "") {
                         

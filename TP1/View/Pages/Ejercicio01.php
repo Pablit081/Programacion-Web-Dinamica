@@ -17,10 +17,10 @@ include_once '../Layouts/header.php';
                         <input type="number" class="form-control form-control-lg" id="numero" name="numero" required>
                         
                         <div class="valid-feedback">
-                            [cite_start]¡Perfecto! [cite: 552]
+                            ¡Perfecto!
                         </div>
                         <div class="invalid-feedback">
-                            [cite_start]Por favor, ingresá un número válido. [cite: 537]
+                            Por favor, ingresá un número válido.
                         </div>
                     </div>
                     
@@ -35,21 +35,21 @@ include_once '../Layouts/header.php';
 </div>
 
 <script>
-    [cite_start]// Se ejecuta una vez que la página carga por completo [cite: 559]
+    // Se ejecuta una vez que la página carga por completo
     (function() {
         'use strict';
         window.addEventListener('DOMContentLoaded', function() {
-            // Buscamos todos los formularios que tengan la clase needs-validation [cite: 561]
+            // Buscamos todos los formularios que tengan la clase needs-validation
             var forms = document.getElementsByClassName('needs-validation');
             
-            // Iteramos sobre ellos y prevenimos el envío si no son válidos [cite: 563]
+            // Iteramos sobre ellos y prevenimos el envío si no son válidos
             var validation = Array.prototype.filter.call(forms, function(form) {
                 form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) { [cite: 566]
-                        event.preventDefault(); [cite: 568]
-                        event.stopPropagation(); [cite: 569]
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
                     }
-                    form.classList.add('was-validated'); [cite: 570]
+                    form.classList.add('was-validated');
                 }, false);
             });
         }, false);
