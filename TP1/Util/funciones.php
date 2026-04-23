@@ -27,8 +27,16 @@ function calcularTotalHoras($arregloHoras) {
     return $total;
 }
 
+/**
+ * Genera un texto de presentación con los datos personales.
+ * Ejercicio 3
+ */
+function generarSaludo($nombre, $apellido, $edad, $direccion) {
+    // Usamos comillas dobles para que PHP interprete las variables adentro del texto
+    return "Hola, yo soy $nombre $apellido, tengo $edad años y vivo en $direccion.";
+}
 
 
-// Acá iremos agregando las funciones de los demás ejercicios (ej. calcular horas, verificar edad, etc.)
+// Siguiente funcion de los demás ejercicios...
 
 ?>
