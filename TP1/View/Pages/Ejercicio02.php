@@ -11,7 +11,7 @@ include_once '../Layouts/header.php';
             <div class="card-body p-4 bg-light">
                 <p class="text-muted small mb-4">Ingrese las horas de cursada para cada día de la semana.</p>
                 
-                <form action="procesarHoras.php" method="get" class="needs-validation" novalidate>
+                <form action="procesarHoras.php" method="get" id="formEj02" novalidate>
                     <?php
                     $dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
                     foreach ($dias as $dia) {
@@ -19,8 +19,7 @@ include_once '../Layouts/header.php';
                         <div class='mb-3 row align-items-center'>
                             <label class='col-sm-4 col-form-label fw-bold'>$dia:</label>
                             <div class='col-sm-8'>
-                                <input type='number' name='horas[]' class='form-control' min='0' max='24' step='0.5' required>
-                                <div class='invalid-feedback'>Ingrese un valor entre 0 y 24.</div>
+                                <input type='number' name='horas[]' class='form-control' step='0.5'>
                             </div>
                         </div>";
                     }
@@ -35,24 +34,7 @@ include_once '../Layouts/header.php';
     </div>
 </div>
 
-<script>
-    // Script de validación de Bootstrap
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            var forms = document.getElementsByClassName('needs-validation');
-            Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
+<script src="../Assets/JS/validadorEj02.js"></script>
 
 <?php 
 include_once '../Layouts/footer.php'; 
