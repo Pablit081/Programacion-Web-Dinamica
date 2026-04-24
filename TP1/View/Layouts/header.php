@@ -9,6 +9,7 @@
         /* Un toque personalizado para mantener el azul de la UNCO */
         .bg-unco { background-color: #0054a6 !important; }
     </style>
+    <script src="../Assets/JS/funcionesValidador.js"></script>
 </head>
 <body class="d-flex flex-column min-vh-100 bg-light">
 
