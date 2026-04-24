@@ -45,7 +45,22 @@ function esMayorDeEdad($edad) {
     return ($edad >= 18);
 }
 
-
+/**
+ * Convierte el código numérico del nivel de estudio a texto.
+ * Ejercicio 5
+ */
+function obtenerTextoEstudios($codigo) {
+    switch ($codigo) {
+        case '1':
+            return "no tiene estudios formales";
+        case '2':
+            return "estudios primarios";
+        case '3':
+            return "estudios secundarios";
+        default:
+            return "nivel de estudios no especificado";
+    }
+}
 // Siguiente funcion de los demás ejercicios...
 
 ?>
