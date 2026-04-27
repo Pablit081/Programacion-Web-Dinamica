@@ -1,3 +1,5 @@
+// --- VALIDADOR EJERCICIO 5 ---
+
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("formEj05");
 

@@ -1,4 +1,4 @@
-// --- LÓGICA DEL EJERCICIO 1 ---
+// --- VALIDADOR EJERCICIO 1 ---
 
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("formEj01");

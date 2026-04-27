@@ -1,4 +1,4 @@
-// --- FUNCIONES AUXILIARES (Exactamente como las armó tu profe) ---
+// --- VALIDADOR EJERCICIO 3 ---
 
 function marcarInvalido(input, mensaje) {
     input.classList.remove("is-valid");
@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let formularioValido = true;
 
-        // Definimos las Expresiones Regulares del profe
         const regexTexto = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
         // Esta regex de dirección exige "Letras, un espacio, y números" (Ej: "Avenida 123")
         const regexDireccion = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+\s\d+$/; 

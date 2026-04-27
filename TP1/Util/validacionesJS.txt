@@ -1,0 +1,63 @@
+// 1. LA SALA DE ESPERA: Aguardamos a que el HTML esté 100% dibujado.
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 2. CAPTURA DEL FORMULARIO
+    const formulario = document.getElementById("id_del_formulario");
+
+    // 3. ESCUCHAMOS EL EVENTO DE ENVÍO
+    formulario.addEventListener("submit", (evento) => {
+        
+        // 4. EL FRENO DE MANO: Evitamos que viaje a PHP automáticamente.
+        evento.preventDefault();
+
+        // 5. LA BANDERA DE INOCENCIA: Asumimos que todo está bien al principio.
+        let formularioValido = true;
+
+        // -----------------------------------------------------------
+        // 6. ZONA DE VALIDACIONES (Se repite por cada campo)
+        // -----------------------------------------------------------
+        
+        // EJEMPLO TEXTO (Con Regex)
+        const inputTexto = document.getElementById("id_del_input_texto");
+        const regex = /^[a-zA-Z]+$/; // Reemplazar por la Regex necesaria
+        
+        if (!regex.test(inputTexto.value.trim())) {
+            marcarInvalido(inputTexto, "Mensaje de error personalizado.");
+            formularioValido = false; // Bajamos la bandera
+        } else {
+            marcarValido(inputTexto); // Todo OK, pintamos de verde
+        }
+
+        // EJEMPLO NÚMEROS (Con Matemáticas)
+        const inputNumero = document.getElementById("id_del_input_numero");
+        const valorNum = parseInt(inputNumero.value.trim()); // o parseFloat() para decimales
+        
+        if (isNaN(valorNum) || valorNum < 0 || valorNum > 100) {
+            marcarInvalido(inputNumero, "Error matemático.");
+            formularioValido = false;
+        } else {
+            marcarValido(inputNumero);
+        }
+
+        // -----------------------------------------------------------
+        // 7. EL VEREDICTO FINAL
+        // -----------------------------------------------------------
+        if (formularioValido) {
+            // Si la bandera sobrevivió intacta (sigue siendo true), liberamos el viaje.
+            formulario.submit();
+        }
+    });
+});
+
+// Miniglosario de Comandos Clave
+novalidate (en HTML): "Navegador, no te metas, yo valido manualmente."
+
+.value: "Traeme exactamente lo que escribió el usuario en esta caja."
+
+.trim(): "Cortale los espacios en blanco inútiles al principio y al final."
+
+.test(): "Agarrá esta Expresión Regular (molde) y fijate si el texto encaja."
+
+parseInt() / parseFloat(): "Agarrá este texto y transformalo en un número real para poder usar < o >."
+
+isNaN(): "Preguntá si esto que intenté convertir resultó ser 'No un Número' (trampas o campos vacíos)."

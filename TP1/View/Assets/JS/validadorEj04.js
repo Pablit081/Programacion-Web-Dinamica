@@ -1,3 +1,5 @@
+// --- VALIDADOR EJERCICIO 4 ---
+
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("formEj04");
 
@@ -5,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
         evento.preventDefault();
         let formularioValido = true;
 
-        // Regex del profe
         const regexTexto = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
         // Validar Nombre
@@ -33,5 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
 function newFunction(inputEdad) {
     marcarInvalido(inputEdad, "Ingrese una edad real (0-99).");
 }
-// Nota: Asegurate de que las funciones marcarInvalido() y marcarValido() 
-// estén disponibles (podes ponerlas en un archivo JS común o repetirlas).

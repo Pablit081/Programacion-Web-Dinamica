@@ -26,7 +26,6 @@ include_once '../Layouts/header.php';
                         // Capturamos el valor enviado desde el formulario
                         $numeroIngresado = $_POST['numero'];
                         
-                        // Usamos tu función centralizada
                         $resultado = evaluarNumero($numeroIngresado);
                         
                         // Mostramos el cartel de Bootstrap según el resultado

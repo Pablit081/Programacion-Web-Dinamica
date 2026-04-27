@@ -1,4 +1,4 @@
-// --- LÓGICA PARA ARREGLOS DE INPUTS ---
+// --- VALIDADOR EJERCICIO 2 ---
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("formEj02");
 
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const valor = input.value.trim();
             const horas = parseFloat(valor);
 
-            // Validamos: que no esté vacío y que esté entre 0 y 24
+            // Validamos horas: que no esté vacío y que esté entre 0 y 24
             if (valor === "" || isNaN(horas) || horas < 0 || horas > 24) {
                 marcarInvalido(input, "Ingrese un número entre 0 y 24.");
                 formularioValido = false;
