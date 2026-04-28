@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Reutilizamos Regex
         const regexTexto = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+        // ¡ESTA ES LA LÍNEA QUE FALTABA!
+        const regexDireccion = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+\s\d+$/; 
 
         // --- VALIDAR NOMBRE ---
         const inputNombre = document.getElementById("nombre");
@@ -31,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- VALIDAR EDAD ---
         const inputEdad = document.getElementById("edad");
         const valorEdad = parseInt(inputEdad.value.trim());
-        // Verificamos que no esté vacío, que sea número y que esté entre 1 y 99
         if (isNaN(valorEdad) || valorEdad < 1 || valorEdad > 99) {
             marcarInvalido(inputEdad, "Debe ingresar una edad numérica válida (entre 1 y 99).");
             formularioValido = false;
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             marcarValido(inputDireccion);
         }
 
-        // 2. NUEVO: Validar Select (Sexo)
+        // --- VALIDAR SELECT (SEXO) ---
         const selectSexo = document.getElementById("sexo");
         if (selectSexo.value === "") {
             marcarInvalido(selectSexo, "Debe seleccionar una opción.");
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             marcarValido(selectSexo);
         }
 
-        // 3. NUEVO: Validar Radio Buttons (Estudios)
+        // --- VALIDAR RADIO BUTTONS (ESTUDIOS) ---
         const radiosEstudios = document.getElementsByName("estudios");
         let estudioSeleccionado = false;
         
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Usamos el último radio (que le pusimos la clase .radio-final) para anclar el mensaje de error
         const ultimoRadio = document.querySelector(".radio-final");
         if (!estudioSeleccionado) {
             marcarInvalido(ultimoRadio, "Seleccione su nivel de estudios.");
@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             marcarValido(ultimoRadio);
         }
 
+        // --- ENVÍO FINAL ---
         if (formularioValido) {
             formulario.submit();
         }
