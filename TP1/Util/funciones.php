@@ -61,6 +61,34 @@ function obtenerTextoEstudios($codigo) {
             return "nivel de estudios no especificado";
     }
 }
-// Siguiente funcion de los demás ejercicios...
+
+/**
+ * Encapsula la captura de datos sin importar el método (GET o POST)
+ * @return array
+ */
+function data_submitted() {
+    $data = array();
+    if (!empty($_POST)) {
+        $data = $_POST;
+    } elseif (!empty($_GET)) {
+        $data = $_GET;
+    }
+    return $data;
+}
+
+/**
+ * Cálculo de la tarifa
+ * Ejercicio 8
+ */
+function calcularTarifaCine($edad, $esEstudiante) {
+    if ($edad < 12) {
+        $precio = 160;
+    } elseif ($esEstudiante && $edad >= 12) {
+        $precio = 180;
+    } else {
+        $precio = 300;
+    }
+    return $precio;
+}
 
 ?>
